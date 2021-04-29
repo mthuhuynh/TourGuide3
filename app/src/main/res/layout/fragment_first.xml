@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="funix.prm.tourguide3.FirstFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Vietnamrzzzzvddddddddddddddddddddddddddddddddddddddddddddddddddddddddd" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_directions_bus_24"
+                android:padding="20dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_hotel_24"
+                android:padding="20dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_local_atm_24"
+                android:padding="20dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:id="@+id/icon4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_local_hospital_24"
+                android:padding="20dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:layout_weight="1"
+                />
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
+
+</FrameLayout>
