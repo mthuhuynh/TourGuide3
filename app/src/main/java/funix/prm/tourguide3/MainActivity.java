@@ -55,35 +55,37 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.OnF
         }
     }
 
-//    @Override
-//    public void onItemPressed(int content) {
-//        SecondFragment secondFragment = SecondFragment.newInstance(content);
-//        if (findViewById(R.id.contentFrame) != null) {
-//            // Found the ID of only one Fragment ==> Portrait mode
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            fragmentTransaction.replace(R.id.contentFrame, secondFragment);
-//            fragmentTransaction.addToBackStack(null);
-//            fragmentTransaction.commit();
-//        } else {
-//            // Landscape mode
-//            getSupportFragmentManager().beginTransaction().replace(R.id.secondFrame, secondFragment).commit();
-//        }
+
 
     @Override
-    public void onItemPressed(String content1, String content2) {
-        BlankFragment blankFragment = BlankFragment.newInstance(content1, content2);
+    public void onItemPressed(int content) {
+        SecondFragment secondFragment = SecondFragment.newInstance(content);
         if (findViewById(R.id.contentFrame) != null) {
             // Found the ID of only one Fragment ==> Portrait mode
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.contentFrame, blankFragment);
+            fragmentTransaction.replace(R.id.contentFrame, secondFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         } else {
             // Landscape mode
-            getSupportFragmentManager().beginTransaction().replace(R.id.secondFrame, blankFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.secondFrame, secondFragment).commit();
         }
+
+//    @Override
+//    public void onItemPressed(String content1, String content2) {
+//        BlankFragment blankFragment = BlankFragment.newInstance(content1, content2);
+//        if (findViewById(R.id.contentFrame) != null) {
+//            // Found the ID of only one Fragment ==> Portrait mode
+//            FragmentManager fragmentManager = getSupportFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            fragmentTransaction.replace(R.id.contentFrame, blankFragment);
+//            fragmentTransaction.addToBackStack(null);
+//            fragmentTransaction.commit();
+//        } else {
+//            // Landscape mode
+//            getSupportFragmentManager().beginTransaction().replace(R.id.secondFrame, blankFragment).commit();
+//        }
     }
 
 
