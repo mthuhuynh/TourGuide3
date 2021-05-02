@@ -24,9 +24,9 @@ public class BlankFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static ListView myListView;
+    private ListView myListView;
 
-private static List<String> items = new ArrayList<String>();
+private static List<String> items = new ArrayList<>();
 
 
     // TODO: Rename and change types of parameters
@@ -62,8 +62,6 @@ private static List<String> items = new ArrayList<String>();
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
 
     @Override
@@ -79,7 +77,7 @@ private static List<String> items = new ArrayList<String>();
         // Khai báo myListView và kết nối với my_listview bên XML
         myListView = view.findViewById(R.id.my_listview);
         // Khai báo myArrayAdapter
-        ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
+        ArrayAdapter<String> myArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items);
         // Gắn myArrayAdapter vào cho myListView
         myListView.setAdapter(myArrayAdapter);
 

@@ -8,14 +8,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FirstFragment extends Fragment {
 
     private OnFirstFragmentListener mListener;
-    private ImageView img1;
-    private ImageView img2;
-    private ImageView img3;
-    private ImageView img4;
+
+    RecyclerView dataList;
+    List<String> titles;
+    List<Integer> images;
+    Adapter adapter;
 
     public FirstFragment() {
         // Required empty public constructor
@@ -27,73 +34,23 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
-        img1 = view.findViewById(R.id.icon1);
-        img2 = view.findViewById(R.id.icon2);
-        img3 = view.findViewById(R.id.icon3);
-        img4 = view.findViewById(R.id.icon4);
+        dataList = view.findViewById(R.id.dataList);
 
-        img1.setOnClickListener(this::onClick);
-        img2.setOnClickListener(this::onClick);
-        img3.setOnClickListener(this::onClick);
-        img4.setOnClickListener(this::onClick);
-//        img1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mListener != null) {
-//                    mListener.onItemPressed(1);
-//                }
-//            }
-//        });
-//
-//        img2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mListener != null) {
-//                    mListener.onItemPressed(1);
-//                }
-//            }
-//        });
-//
-//        img3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mListener != null) {
-//                    mListener.onItemPressed(1);
-//                }
-//            }
-//        });
-//
-//        img4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mListener != null) {
-//                    mListener.onItemPressed(1);
-//                }
-//            }
-//        });
+        titles = Arrays.asList(getResources().getStringArray(R.array.location));
+        images = new ArrayList<>();
+
+        images.add(R.drawable.ic_baseline_directions_bus_24);
+        images.add(R.drawable.ic_baseline_hotel_24);
+        images.add(R.drawable.ic_baseline_local_atm_24);
+        images.add(R.drawable.ic_baseline_local_hospital_24);
+
+        adapter = new Adapter(getActivity(),titles,images);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false);
+        dataList.setLayoutManager(gridLayoutManager);
+        dataList.setAdapter(adapter);
 
         return view;
-    }
-
-    public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.icon1:
-                if (mListener != null) {
-                   mListener.onItemPressed(1); }
-                break;
-            case R.id.icon2:
-                if (mListener != null) {
-                mListener.onItemPressed(1); }
-                break;
-            case R.id.icon3:
-                if (mListener != null) {
-                    mListener.onItemPressed(1); }
-                break;
-            case R.id.icon4:
-                if (mListener != null) {
-                    mListener.onItemPressed(1); }
-                break;
-        }
     }
 
     @Override

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="location_array">
+    <string-array name="city">
         <item>Hanoi</item>
         <item>Hochiminh</item>
     </string-array>
 
+    <string-array name="location">
+        <item>Bus</item>
+        <item>Hotel</item>
+        <item>ATM</item>
+        <item>Hospital</item>
+    </string-array>
 
 
 </resources>
